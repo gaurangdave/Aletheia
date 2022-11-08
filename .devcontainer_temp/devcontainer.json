@@ -1,0 +1,128 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/python-3-anaconda
+{
+	"name": "Project Aletheia",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile",
+		"args": {
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				// "python.defaultInterpreterPath": "/opt/conda/bin/python",
+				// "python.linting.enabled": true,
+				// "python.linting.pylintEnabled": true,
+				// "python.formatting.autopep8Path": "/opt/conda/bin/autopep8",
+				// "python.formatting.yapfPath": "/opt/conda/bin/yapf",
+				// "python.linting.flake8Path": "/opt/conda/bin/flake8",
+				// "python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
+				// "python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
+				// "python.linting.pylintPath": "/opt/conda/bin/pylint"
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"eamodio.gitlens",
+				"dbaeumer.vscode-eslint",
+				"ms-vscode.vscode-typescript-tslint-plugin",
+				"mongodb.mongodb-vscode",
+				"golang.go",
+				"rangav.vscode-thunder-client",
+				"mikael.angular-beastcode",
+				"angular.ng-template",
+				"nrwl.angular-console",
+				"formulahendry.auto-close-tag",
+				"coenraads.bracket-pair-colorizer",
+				"abusaidm.html-snippets",
+				"johnpapa.vscode-peacock",
+				"googlecloudtools.cloudcode",
+				"eg2.vscode-npm-script",
+				"christian-kohler.npm-intellisense",
+				"esbenp.prettier-vscode",
+				"ms-python.python",
+				"zxh404.vscode-proto3",
+				"ritwickdey.liveserver",
+				"github.copilot",
+				"hookyqr.beautify",
+				"vangware.dark-plus-material",
+				"dart-code.flutter",
+				"ecmel.vscode-html-css",
+				"gregorbiswanger.json2ts",
+				"ritwickdey.live-sass",
+				"pkief.material-icon-theme",
+				"pnp.polacode",
+				"hbenl.vscode-test-explorer",
+				"visualstudioexptteam.vscodeintellicode",
+				"ashinzekene.nestjs",
+				"abhijoybasak.nestjs-files",
+				"ms-toolsai.jupyter-keymap",
+				"mechatroner.rainbow-csv",
+				"RapidAPI.vscode-rapidapi-client",
+				"msjsdiag.vscode-react-native"
+			]
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		3000,
+		27017,
+		4200,
+		9000,
+		9001,
+		9002,
+		9003,
+		9004,
+		9005,
+		9006,
+		9090
+	],
+	"portsAttributes": {
+		"4200": {
+			"label": "AngularUI"
+		},
+		"9000": {
+			"label": "Authentication"
+		},
+		"9001": {
+			"label": "Functions"
+		},
+		"9002": {
+			"label": "Firestore"
+		},
+		"9003": {
+			"label": "Database"
+		},
+		"9004": {
+			"label": "Hosting"
+		},
+		"9005": {
+			"label": "Pub/Sub"
+		},
+		"9006": {
+			"label": "Storage"
+		},
+		"9090": {
+			"label": "Emulator UI"
+		}
+	},
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "python --version",
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:/some/other/path",
+		"MY_REMOTE_VARIABLE": "some-other-value-here",
+		"MY_REMOTE_VARIABLE2": "${localEnv:SOME_LOCAL_VAR}"
+	 },
+	 "runArgs": [
+		"--gpus",
+		"all"
+	 ]
+}
