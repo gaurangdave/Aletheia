@@ -1,0 +1,2 @@
+data/fox_data.csv filter=lfs diff=lfs merge=lfs -text
+data/fox_metadata.csv filter=lfs diff=lfs merge=lfs -text
