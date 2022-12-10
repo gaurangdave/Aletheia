@@ -143,6 +143,9 @@ def lemmatization_without_pos(texts):
             [token.lemma_ for token in doc])
     return texts_out
 
+def simple_tokenization(texts):
+    """https://spacy.io/api/annotation"""
+    return [nlp(text) for text in tqdm(texts)]
 
 def make_bigrams(texts, bigram_mod):
     return [bigram_mod[doc] for doc in texts]
@@ -193,7 +196,3 @@ def lemmatization_noun_chunks(texts):
              and token.is_alpha and token.is_stop == False)
         )])
     return texts_out
-
-
-def hello_world():
-    print("Hello World")
